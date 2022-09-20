@@ -1,0 +1,12 @@
+# Compose is a tool for defining and running multi-container Docker applications
+version: '1'
+# what services do you want to run
+services:
+  web:
+    build: . # Build the current folder
+    command: python manage.py runserver 0.0.0.0:8000 
+    volumes: 
+      - .:/app
+    ports:
+      - "8000:8000"
+      
